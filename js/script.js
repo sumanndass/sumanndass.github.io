@@ -13,9 +13,7 @@ const modalLink = document.getElementById("modalLink");
 
 let allProjects = [];
 
-/* -----------------------------
-   Dark Mode Toggle
------------------------------ */
+/* Dark Mode Toggle */
 const darkToggle = document.getElementById("darkToggle");
 const savedTheme = localStorage.getItem("theme");
 
@@ -31,9 +29,7 @@ darkToggle.addEventListener("click", () => {
   localStorage.setItem("theme", isDark ? "dark" : "light");
 });
 
-/* -----------------------------
-   Fetch GitHub Projects
------------------------------ */
+/* Fetch GitHub Projects */
 fetch(`https://api.github.com/users/${username}/repos?sort=updated`)
   .then(response => response.json())
   .then(repos => {
@@ -46,9 +42,7 @@ fetch(`https://api.github.com/users/${username}/repos?sort=updated`)
     console.error(error);
   });
 
-/* -----------------------------
-   Render Filters
------------------------------ */
+/* Render Filters */
 function renderFilters(projects) {
   const languages = [...new Set(projects.map(p => p.language).filter(Boolean))].sort();
 
@@ -74,9 +68,7 @@ function renderFilters(projects) {
   });
 }
 
-/* -----------------------------
-   Render Projects
------------------------------ */
+/* Render Projects */
 function renderProjects(projects) {
   projectsContainer.innerHTML = "";
 
@@ -98,9 +90,7 @@ function renderProjects(projects) {
   });
 }
 
-/* -----------------------------
-   Modal Logic
------------------------------ */
+/* Modal Logic */
 function openModal(repo) {
   modalTitle.textContent = repo.name;
   modalDescription.textContent = repo.description || "No description provided.";
