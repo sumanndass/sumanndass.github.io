@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suman Das | Data Analyst</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-top">
+    <div>
+      <h1>Suman Das</h1>
+      <p>Data Analyst</p>
+    </div>
+    <button id="darkToggle" aria-label="Toggle dark mode">🌙</button>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="section">
+    <h2>About</h2>
+    <p>
+      I am a Data Analyst focused on transforming raw data into actionable insights through dashboards, automation, and analytics-driven decision-making.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>Python</span>
+      <span>SQL</span>
+      <span>Excel</span>
+      <span>Power BI</span>
+      <span>Tableau</span>
+      <span>Google Sheets</span>
+      <span>APIs</span>
+      <span>Git</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Projects</h2>
+
+    <div class="filters">
+      <button class="filter-btn active" data-lang="all">All</button>
+      <!-- Dynamic filters load here -->
+    </div>
+
+    <div id="projects" class="projects-grid">
+      <!-- Loading skeletons -->
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>GitHub Activity</h2>
+    <div class="github-graph">
+      <img src="https://ghchart.rshah.org/sumanndass" alt="GitHub contribution graph">
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+    <p>GitHub: <a href="https://github.com/sumanndass" target="_blank">github.com/sumanndass</a></p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Suman Das</p>
+</footer>
+
+<!-- Project Modal -->
+<div id="projectModal" class="modal hidden">
+  <div class="modal-content">
+    <button id="modalClose">×</button>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDescription"></p>
+    <p><strong>Language:</strong> <span id="modalLanguage"></span></p>
+    <p><strong>Stars:</strong> ⭐ <span id="modalStars"></span></p>
+    <p><strong>Last Updated:</strong> <span id="modalUpdated"></span></p>
+    <a id="modalLink" href="#" target="_blank">View on GitHub →</a>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
