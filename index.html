@@ -1,187 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Suman Das | Data Analyst Portfolio</title>
-
-  <!-- SEO Meta -->
-  <meta name="description" content="Suman Das is a Data Analyst specializing in dashboards, automation, and business intelligence using Power Query, Python, SQL, Excel, Power BI, and Tableau.">
-  <meta name="keywords" content="Suman Das, Data Analyst, Portfolio, Python, SQL, Power BI, Tableau, Excel, Business Intelligence">
-  <meta name="author" content="Suman Das">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Suman Das | Data Analyst Portfolio">
-  <meta property="og:description" content="Data Analyst portfolio showcasing dashboards, automation projects, and business impact.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://sumanndass.github.io/">
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Suman Das",
-    "jobTitle": "Data Analyst",
-    "url": "https://sumanndass.github.io/",
-    "sameAs": [
-      "https://github.com/sumanndass"
-    ],
-    "knowsAbout": ["Power Query", "SQL", "Excel", "Power BI", "Python", "MSBI", "Data Visualization", "Business Intelligence"]
-  }
-  </script>
-
-  <link rel="stylesheet" href="css/style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suman Das | Data Analyst</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<header class="hero">
-  <div class="hero-top">
-    <div>
-      <h1>Suman Das</h1>
-      <p>Data Analyst</p>
-    </div>
-    <div class="hero-actions">
-      <a href="assets/Resume_Suman_Das.pdf" class="resume-btn" download>Download Resume</a>
-      <button id="darkToggle" aria-label="Toggle dark mode">🌙</button>
-    </div>
-  </div>
-</header>
+    <nav class="navbar">
+        <div class="logo">SD.</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#certificates">Certificates</a>
+        </div>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="fas fa-sun"></i>
+        </button>
+    </nav>
 
-<main class="container">
+    <header class="hero">
+        <div class="hero-content">
+            <img src="assets/profile.jpg" alt="Suman Das" class="profile-pic"> <h1>Suman Das</h1>
+            <h2>Data Analyst</h2>
+            <div class="social-links">
+                <a href="mailto:dassuman.email@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://www.linkedin.com/in/sumanndass" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/sumanndass" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+            <p class="bio">
+                Transforming raw data into actionable business insights. Expert in Python, SQL, and Power BI with a strong background in operations and compliance reporting.
+            </p>
+        </div>
+    </header>
 
-  <!-- About -->
-  <section class="section">
-    <h2>About</h2>
-    <p>
-      I am a Data Analyst with a strong focus on transforming complex, high-volume data into actionable insights that drive business decisions. 
-      My expertise spans data modeling, dashboard design, process automation, and performance analytics using  Excel, Power Query, SQL, Power BI, Python, and MSBI.
-      I specialize in building scalable reporting systems, reducing manual effort through automation, and delivering executive-ready insights aligned to business KPIs.
-    </p>
-  </section>
+    <section id="skills" class="section">
+        <h3 class="section-title">Technical Skills</h3>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4><i class="fas fa-code"></i> Languages & Tools</h4>
+                <p>SQL Server, T-SQL, Python (NumPy, Pandas, Matplotlib, Seaborn, Plotly)</p>
+            </div>
+            <div class="skill-category">
+                <h4><i class="fas fa-chart-bar"></i> BI & Visualization</h4>
+                <p>Power BI, Google Looker Studio, DAX, MSBI (SSIS, SSAS, SSRS)</p>
+            </div>
+            <div class="skill-category">
+                <h4><i class="fas fa-database"></i> Data Handling</h4>
+                <p>Advanced Excel, Power Query, Google Sheets, Data Warehousing</p>
+            </div>
+            <div class="skill-category">
+                <h4><i class="fas fa-cogs"></i> Core Competencies</h4>
+                <p>Data Cleaning, ETL, KPI Reporting, MIS Reporting, Dashboarding, Data Governance</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Skills -->
-  <section class="section">
-    <h2>Core Skills</h2>
-    <div class="skills">
-      <span>Excel (Advanced)</span>
-      <span>Power Query</span>
-      <span>SQL</span>
-      <span>Power BI</span>
-      <span>Google Sheets</span>
-      <span>Looker Studio</span>      
-      <span>Python</span>      
-      <span>Data Modeling</span>
-      <span>ETL Automation</span>
-      <span>APIs</span>
-    </div>
-  </section>
+    <section id="experience" class="section">
+        <h3 class="section-title">Work Experience</h3>
+        <div class="timeline">
+            
+            <div class="timeline-item">
+                <div class="timeline-date">Mar’2025 – Present</div>
+                <div class="timeline-content">
+                    <h4>Data Assistant Manager</h4>
+                    <span class="company">ICA Edu Skills Pvt. Ltd., Kolkata</span>
+                    <p><em>Category: Education, Vocational Training</em></p>
+                    <ul>
+                        <li>Developed automated dashboards and KPI reports using Advanced Excel, Google Sheets, and Looker Studio to monitor performance metrics across 5+ departments.</li>
+                        <li>Cleaned and validated 100K+ rows of data for monthly reporting, ensuring data consistency across systems.</li>
+                        <li>Led cross-functional analytics initiatives, improving reporting efficiency by 40%.</li>
+                        <li>Maintained MIS systems and provided data training for internal stakeholders.</li>
+                        <li>Complied with data governance policies and ensured data security.</li>
+                    </ul>
+                </div>
+            </div>
 
-  <!-- Featured Case Studies -->
-  <section class="section">
-    <h2>Featured Case Studies</h2>
-    <div class="case-studies">
+            <div class="timeline-item">
+                <div class="timeline-date">Nov’2020 – Mar’2025</div>
+                <div class="timeline-content">
+                    <h4>Quality Associate</h4>
+                    <span class="company">SNE Business India Pvt. Ltd., Kolkata</span>
+                    <p><em>Category: Pharma CFA</em></p>
+                    <ul>
+                        <li>Built compliance MIS reports using Advanced Excel (Power Query, Power Pivot) for SOP, GSP, GMP, GWP, HSE, and Data Integrity.</li>
+                        <li>Analyzed deviations, CAPA, complaints, and recalls using Excel models, pivots, and trend analysis.</li>
+                        <li>Monitored equipment maintenance, calibration, and downtime compliance through Excel-based KPI tracking.</li>
+                        <li>Developed vendor performance scorecards using Power Query data integration and Excel KPIs.</li>
+                        <li>Created training analytics using Power Pivot and DAX to track completion effectiveness.</li>
+                    </ul>
+                </div>
+            </div>
 
-      <div class="case-card">
-        <h3>📊 Sales Performance Dashboard Automation</h3>
-        <p><strong>Tools:</strong> Python, SQL, Power BI</p>
-        <p><strong>Business Problem:</strong> Manual monthly sales reporting was taking 6+ hours and delayed leadership decisions.</p>
-        <p><strong>Solution:</strong> Built an automated ETL pipeline and Power BI dashboard with real-time KPIs.</p>
-        <p><strong>Impact:</strong> Reduced reporting time by 92%, enabled daily performance tracking, and improved sales forecasting accuracy by 18%.</p>
-      </div>
+            <div class="timeline-item">
+                <div class="timeline-date">May’2011 – Nov’2020</div>
+                <div class="timeline-content">
+                    <h4>Sales Support & MIS Executive</h4>
+                    <span class="company">SSV Pvt. Ltd., Kolkata</span>
+                    <p><em>Category: Pharma CFA</em></p>
+                    <ul>
+                        <li>Manage SAP-based MIS reporting, sales coordination, and SAP billing, including error correction.</li>
+                        <li>Maintain and manage stock data in SAP, including transfers and depot distribution.</li>
+                        <li>Handle documentation such as credit notes and e-way bills; verify and process data accurately.</li>
+                    </ul>
+                </div>
+            </div>
 
-      <div class="case-card">
-        <h3>📈 Customer Retention & Churn Analysis</h3>
-        <p><strong>Tools:</strong> SQL, Python, Tableau</p>
-        <p><strong>Business Problem:</strong> High customer churn with no clear drivers.</p>
-        <p><strong>Solution:</strong> Designed churn models and cohort analysis dashboards to identify behavioral patterns.</p>
-        <p><strong>Impact:</strong> Identified top 3 churn drivers, enabling targeted interventions that reduced churn by 11% quarter-over-quarter.</p>
-      </div>
+        </div>
+    </section>
 
-      <div class="case-card">
-        <h3>⚙️ Finance Reporting Automation System</h3>
-        <p><strong>Tools:</strong> Python, Excel, APIs</p>
-        <p><strong>Business Problem:</strong> Finance team relied on error-prone spreadsheets for monthly close.</p>
-        <p><strong>Solution:</strong> Automated data ingestion and reconciliation workflows with validation checks.</p>
-        <p><strong>Impact:</strong> Cut close cycle by 40%, eliminated manual errors, and improved audit readiness.</p>
-      </div>
+    <section id="projects" class="section">
+        <h3 class="section-title">Featured Projects</h3>
+        <p class="section-subtitle">Hover or tap to see the process in action.</p>
+        
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="video-container">
+                    <video loop muted playsinline poster="assets/project1-thumb.jpg"> 
+                        <source src="assets/project1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h4>Sales Analytics Dashboard</h4>
+                    <p>A dynamic Power BI dashboard analyzing sales trends across regions.</p>
+                    <div class="tags">
+                        <span>Power BI</span><span>DAX</span><span>Excel</span>
+                    </div>
+                    <a href="https://github.com/sumanndass/YOUR-REPO-NAME" class="btn-link" target="_blank">View on GitHub <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
 
-    </div>
-  </section>
+            <div class="project-card">
+                <div class="video-container">
+                    <video loop muted playsinline poster="assets/project2-thumb.jpg">
+                        <source src="assets/project2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h4>Operational Metrics Tracker</h4>
+                    <p>Automated reporting system using Python and SQL to track daily KPIs.</p>
+                    <div class="tags">
+                        <span>Python</span><span>SQL</span><span>Pandas</span>
+                    </div>
+                    <a href="https://github.com/sumanndass/YOUR-REPO-NAME" class="btn-link" target="_blank">View on GitHub <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
 
-  <!-- KPI Dashboards -->
-  <section class="section">
-    <h2>KPI Dashboards</h2>
-    <p>Live embedded dashboards demonstrating executive-level performance tracking.</p>
+        </div>
+    </section>
 
-    <div class="dashboard-embeds">
-      <!-- Replace iframe src URLs with your actual Power BI / Tableau public links -->
-      <iframe src="https://app.powerbi.com/view?r=YOUR_POWERBI_EMBED_URL" title="Power BI Dashboard"></iframe>
-      <iframe src="https://public.tableau.com/views/YOUR_TABLEAU_DASHBOARD?:showVizHome=no" title="Tableau Dashboard"></iframe>
-    </div>
-  </section>
+    <section id="certificates" class="section">
+        <h3 class="section-title">Certifications</h3>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <img src="assets/cert1.jpg" alt="Certificate Name">
+                <h4>Power BI Data Analyst Associate</h4>
+                <a href="#">View Credential</a>
+            </div>
+            <div class="cert-card">
+                <img src="assets/cert2.jpg" alt="Certificate Name">
+                <h4>Google Data Analytics</h4>
+                <a href="#">View Credential</a>
+            </div>
+            </div>
+    </section>
 
-  <!-- Projects -->
-  <section class="section">
-    <h2>Projects</h2>
+    <footer>
+        <p>&copy; 2026 Suman Das. Built with code.</p>
+    </footer>
 
-    <div class="filters">
-      <button class="filter-btn active" data-lang="all">All</button>
-    </div>
-
-    <div id="projects" class="projects-grid">
-      <div class="skeleton-card"></div>
-      <div class="skeleton-card"></div>
-      <div class="skeleton-card"></div>
-      <div class="skeleton-card"></div>
-    </div>
-  </section>
-
-  <!-- Blog -->
-  <section class="section">
-    <h2>Blog</h2>
-    <p>Articles on analytics, automation, and business intelligence.</p>
-
-    <div class="blog-preview">
-      <article>
-        <h3><a href="blog.html">How I Automated Monthly Reporting with Python</a></h3>
-        <p>Reducing manual work by over 90% through automation and reproducible pipelines.</p>
-      </article>
-
-      <article>
-        <h3><a href="blog.html">Designing Executive Dashboards that Drive Action</a></h3>
-        <p>Best practices for KPI design, storytelling, and stakeholder alignment.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="section">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:dassuman.email@gmail.com">dassuman.email@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/sumanndass" target="_blank">github.com/sumanndass</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/sumanndass" target="_blank">linkedin.com/in/sumanndass</a></p>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <p>© 2026 Suman Das</p>
-</footer>
-
-<!-- Project Modal -->
-<div id="projectModal" class="modal hidden">
-  <div class="modal-content">
-    <button id="modalClose">×</button>
-    <h3 id="modalTitle"></h3>
-    <p id="modalDescription"></p>
-    <p><strong>Language:</strong> <span id="modalLanguage"></span></p>
-    <p><strong>Stars:</strong> ⭐ <span id="modalStars"></span></p>
-    <p><strong>Last Updated:</strong> <span id="modalUpdated"></span></p>
-    <a id="modalLink" href="#" target="_blank">View on GitHub →</a>
-  </div>
-</div>
-
-<script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
