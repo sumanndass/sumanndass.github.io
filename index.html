@@ -3,7 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Suman Das | Data Analyst</title>
+  <title>Suman Das | Data Analyst Portfolio</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Suman Das is a Data Analyst specializing in dashboards, automation, and business intelligence using Python, SQL, Excel, Power BI, and Tableau.">
+  <meta name="keywords" content="Suman Das, Data Analyst, Portfolio, Python, SQL, Power BI, Tableau, Excel, Business Intelligence">
+  <meta name="author" content="Suman Das">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Suman Das | Data Analyst Portfolio">
+  <meta property="og:description" content="Data Analyst portfolio showcasing dashboards, automation projects, and business impact.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sumanndass.github.io/">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Suman Das",
+    "jobTitle": "Data Analyst",
+    "url": "https://sumanndass.github.io/",
+    "sameAs": [
+      "https://github.com/sumanndass"
+    ],
+    "knowsAbout": ["Python", "SQL", "Excel", "Power BI", "Tableau", "Data Visualization", "Business Intelligence"]
+  }
+  </script>
+
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
@@ -14,43 +41,95 @@
       <h1>Suman Das</h1>
       <p>Data Analyst</p>
     </div>
-    <button id="darkToggle" aria-label="Toggle dark mode">🌙</button>
+    <div class="hero-actions">
+      <a href="assets/Suman_Das_Resume.pdf" class="resume-btn" download>Download Resume</a>
+      <button id="darkToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
   </div>
 </header>
 
 <main class="container">
 
+  <!-- About -->
   <section class="section">
     <h2>About</h2>
     <p>
-      I am a Data Analyst focused on transforming raw data into actionable insights through dashboards, automation, and analytics-driven decision-making.
+      I am a Data Analyst with a strong focus on transforming complex, high-volume data into actionable insights that drive business decisions. 
+      My expertise spans data modeling, dashboard design, process automation, and performance analytics using Python, SQL, Excel, Power BI, and Tableau.
+      I specialize in building scalable reporting systems, reducing manual effort through automation, and delivering executive-ready insights aligned to business KPIs.
     </p>
   </section>
 
+  <!-- Skills -->
   <section class="section">
-    <h2>Skills</h2>
+    <h2>Core Skills</h2>
     <div class="skills">
       <span>Python</span>
       <span>SQL</span>
-      <span>Excel</span>
+      <span>Excel (Advanced)</span>
       <span>Power BI</span>
       <span>Tableau</span>
       <span>Google Sheets</span>
+      <span>Data Modeling</span>
+      <span>ETL Automation</span>
       <span>APIs</span>
       <span>Git</span>
     </div>
   </section>
 
+  <!-- Featured Case Studies -->
+  <section class="section">
+    <h2>Featured Case Studies</h2>
+    <div class="case-studies">
+
+      <div class="case-card">
+        <h3>📊 Sales Performance Dashboard Automation</h3>
+        <p><strong>Tools:</strong> Python, SQL, Power BI</p>
+        <p><strong>Business Problem:</strong> Manual monthly sales reporting was taking 6+ hours and delayed leadership decisions.</p>
+        <p><strong>Solution:</strong> Built an automated ETL pipeline and Power BI dashboard with real-time KPIs.</p>
+        <p><strong>Impact:</strong> Reduced reporting time by 92%, enabled daily performance tracking, and improved sales forecasting accuracy by 18%.</p>
+      </div>
+
+      <div class="case-card">
+        <h3>📈 Customer Retention & Churn Analysis</h3>
+        <p><strong>Tools:</strong> SQL, Python, Tableau</p>
+        <p><strong>Business Problem:</strong> High customer churn with no clear drivers.</p>
+        <p><strong>Solution:</strong> Designed churn models and cohort analysis dashboards to identify behavioral patterns.</p>
+        <p><strong>Impact:</strong> Identified top 3 churn drivers, enabling targeted interventions that reduced churn by 11% quarter-over-quarter.</p>
+      </div>
+
+      <div class="case-card">
+        <h3>⚙️ Finance Reporting Automation System</h3>
+        <p><strong>Tools:</strong> Python, Excel, APIs</p>
+        <p><strong>Business Problem:</strong> Finance team relied on error-prone spreadsheets for monthly close.</p>
+        <p><strong>Solution:</strong> Automated data ingestion and reconciliation workflows with validation checks.</p>
+        <p><strong>Impact:</strong> Cut close cycle by 40%, eliminated manual errors, and improved audit readiness.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- KPI Dashboards -->
+  <section class="section">
+    <h2>KPI Dashboards</h2>
+    <p>Live embedded dashboards demonstrating executive-level performance tracking.</p>
+
+    <div class="dashboard-embeds">
+      <!-- Replace iframe src URLs with your actual Power BI / Tableau public links -->
+      <iframe src="https://app.powerbi.com/view?r=YOUR_POWERBI_EMBED_URL" title="Power BI Dashboard"></iframe>
+      <iframe src="https://public.tableau.com/views/YOUR_TABLEAU_DASHBOARD?:showVizHome=no" title="Tableau Dashboard"></iframe>
+    </div>
+  </section>
+
+  <!-- Projects -->
   <section class="section">
     <h2>Projects</h2>
 
     <div class="filters">
       <button class="filter-btn active" data-lang="all">All</button>
-      <!-- Dynamic filters load here -->
     </div>
 
     <div id="projects" class="projects-grid">
-      <!-- Loading skeletons -->
       <div class="skeleton-card"></div>
       <div class="skeleton-card"></div>
       <div class="skeleton-card"></div>
@@ -58,13 +137,25 @@
     </div>
   </section>
 
+  <!-- Blog -->
   <section class="section">
-    <h2>GitHub Activity</h2>
-    <div class="github-graph">
-      <img src="https://ghchart.rshah.org/sumanndass" alt="GitHub contribution graph">
+    <h2>Blog</h2>
+    <p>Articles on analytics, automation, and business intelligence.</p>
+
+    <div class="blog-preview">
+      <article>
+        <h3><a href="blog.html">How I Automated Monthly Reporting with Python</a></h3>
+        <p>Reducing manual work by over 90% through automation and reproducible pipelines.</p>
+      </article>
+
+      <article>
+        <h3><a href="blog.html">Designing Executive Dashboards that Drive Action</a></h3>
+        <p>Best practices for KPI design, storytelling, and stakeholder alignment.</p>
+      </article>
     </div>
   </section>
 
+  <!-- Contact -->
   <section class="section">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
