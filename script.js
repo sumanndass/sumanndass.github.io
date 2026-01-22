@@ -45,24 +45,38 @@ function updateSliderPosition() {
     track.style.transform = `translateX(-${slideIndex * moveAmount}px)`;
 }
 
+// Next Button with Loop Logic
 btnNext.addEventListener('click', () => {
     const card = document.querySelector('.cert-card-slide');
     const cardWidth = card.getBoundingClientRect().width + 20;
-    const totalCards = track.children.length;
+    const totalCards = track.children.length; // Includes empty slide
     const containerWidth = track.parentElement.offsetWidth;
     const visibleCards = Math.floor(containerWidth / cardWidth);
 
+    // If we have not reached the very end (Blank slide included)
     if (slideIndex < totalCards - visibleCards) {
         slideIndex++;
-        updateSliderPosition();
+    } else {
+        // We are at the end (Blank slide is visible), so LOOP back to start
+        slideIndex = 0;
     }
+    updateSliderPosition();
 });
 
+// Prev Button with Loop Logic
 btnPrev.addEventListener('click', () => {
     if (slideIndex > 0) {
         slideIndex--;
-        updateSliderPosition();
+    } else {
+        // Optional: Loop to end if clicking left at start
+        // const card = document.querySelector('.cert-card-slide');
+        // const cardWidth = card.getBoundingClientRect().width + 20;
+        // const totalCards = track.children.length;
+        // const containerWidth = track.parentElement.offsetWidth;
+        // const visibleCards = Math.floor(containerWidth / cardWidth);
+        // slideIndex = totalCards - visibleCards;
     }
+    updateSliderPosition();
 });
 
 window.addEventListener('resize', () => {
@@ -102,8 +116,11 @@ projectCards.forEach((card, index) => {
 });
 
 certCards.forEach((card, index) => {
+    // Ignore the empty slide
+    if(card.classList.contains('empty-slide')) return;
+
     card.addEventListener('click', () => {
-        currentGroup = certCards;
+        currentGroup = certCards.filter(c => !c.classList.contains('empty-slide')); // Filter out blank from lightbox
         currentIndex = index;
         openLightbox(card);
     });
