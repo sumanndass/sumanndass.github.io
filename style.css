@@ -42,7 +42,7 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Navbar Container */
+/* Navbar */
 .navbar {
     display: flex; 
     justify-content: space-between; 
@@ -50,10 +50,9 @@ body {
     padding: 1rem 5%; 
     max-width: 1400px; 
     margin: 0 auto;
-    flex-wrap: wrap; /* Allow wrapping for mobile layout */
+    flex-wrap: wrap; /* Allows wrapping on mobile */
 }
 
-/* Logo */
 .logo { 
     font-weight: bold; 
     font-size: 1.8rem; 
@@ -64,7 +63,6 @@ body {
     color: var(--red-accent);
 }
 
-/* Navigation Links Container (includes Resume) */
 .nav-links { 
     display: flex; 
     align-items: center; 
@@ -75,21 +73,19 @@ body {
     color: var(--text-color); 
     font-size: 0.95rem; 
     font-weight: 500; 
-    transition: color 0.3s;
 }
 .nav-links a:hover { color: var(--accent); }
 
-/* Resume Button Style */
 .resume-link { 
     border: 1px solid var(--accent); 
     padding: 5px 12px; 
     border-radius: 4px; 
     color: var(--accent) !important; 
     font-weight: 600;
+    transition: 0.3s; 
 }
 .resume-link:hover { background: var(--accent); color: #fff !important; }
 
-/* Theme Switch */
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
@@ -198,6 +194,7 @@ input:checked + .slider .icon-dark { opacity: 1; }
 .tags span { display: inline-block; background: var(--grid-line); padding: 3px 8px; font-size: 0.8rem; border-radius: 4px; margin-right: 5px; margin-top: 5px; font-family: 'Courier New', monospace; }
 .btn-link { display: inline-block; margin-top: 10px; color: var(--accent); text-decoration: none; font-weight: bold; font-size: 0.9rem; }
 
+/* Certificate Slider Styles */
 .cert-slider-wrapper {
     position: relative;
     display: flex;
@@ -272,6 +269,15 @@ input:checked + .slider .icon-dark { opacity: 1; }
 .left-arrow { margin-right: 15px; }
 .right-arrow { margin-left: 15px; }
 
+/* Empty Slide for Loop effect */
+.cert-card-slide.empty-slide {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    cursor: default;
+    pointer-events: none;
+}
+
 footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
 
 .lightbox {
@@ -307,7 +313,7 @@ footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
 .close-lightbox:hover { color: var(--accent); }
 
 
-/* --- MOBILE SPECIFIC STYLES (New Layout) --- */
+/* --- MOBILE LAYOUT FIXES --- */
 @media (max-width: 768px) {
     .insight-banner {
         font-size: 0.8rem;
@@ -322,12 +328,11 @@ footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
     .logo {
         font-size: 1.5rem;
         order: 1;
-        flex-grow: 1; /* Takes up remaining space to push toggle right */
+        flex-grow: 1; /* Push Toggle to right */
     }
 
     .theme-switch-wrapper {
         order: 2;
-        margin-left: 0; /* Reset default margin */
     }
     
     /* Smaller Toggle for mobile */
@@ -335,15 +340,15 @@ footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
     .slider .ball { width: 18px; height: 18px; }
     input:checked + .slider .ball { transform: translateX(24px); }
 
-    /* ROW 2: Nav Links (including Resume) below */
+    /* ROW 2: Nav Links (Resume + Texts) */
     .nav-links {
         order: 3;
         width: 100%; /* Force new line */
         justify-content: center;
         flex-wrap: wrap; 
-        gap: 15px;
+        gap: 12px;
         margin-top: 15px;
-        border-top: 1px solid var(--grid-line); /* Separator line */
+        border-top: 1px solid var(--grid-line);
         padding-top: 15px;
     }
     
@@ -357,8 +362,7 @@ footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
         font-size: 0.85rem;
     }
 
-
-    /* Other Mobile Adjustments */
+    /* Mobile Text Adjustments */
     .hero-container { flex-direction: column; text-align: center; gap: 1.5rem; }
     .hero-text-container { text-align: center; }
     .hero-text-container h1 { font-size: 2rem; }
@@ -368,7 +372,7 @@ footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
 }
 
 @media (max-width: 480px) {
-    .nav-links { gap: 10px; }
+    .nav-links { gap: 8px; }
     .nav-links a { font-size: 0.85rem; }
     .cert-card-slide { min-width: 100%; }
 }
