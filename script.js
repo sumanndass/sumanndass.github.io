@@ -147,10 +147,15 @@ function openLightbox(card) {
         const title = card.querySelector('h4').innerText;
         const linkHref = card.querySelector('a').href;
 
+        // Extract tags for certificates
+        const tagsElement = card.querySelector('.tags');
+        const tagsHTML = tagsElement ? tagsElement.innerHTML : "";
+
         lbImage.src = imgSrc;
         lbImage.style.display = 'block';
         lbTitle.innerText = title;
-        lbDesc.innerText = "Certification Credential"; 
+        lbDesc.innerText = "Skills learned in this certification:"; 
+        lbTags.innerHTML = tagsHTML;
         lbLink.href = linkHref;
         lbLink.innerHTML = 'View Credential <i class="fas fa-external-link-alt"></i>';
 
@@ -206,3 +211,25 @@ document.addEventListener('keydown', (e) => {
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+
+/* ----------------------------------- */
+/* 4. SCROLL TO TOP BUTTON             */
+/* ----------------------------------- */
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+window.addEventListener('scroll', () => {
+    // Show button after scrolling down 200px
+    if (window.scrollY > 200) {
+        scrollToTopBtn.classList.add('show');
+    } else {
+        scrollToTopBtn.classList.remove('show');
+    }
+});
+
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
