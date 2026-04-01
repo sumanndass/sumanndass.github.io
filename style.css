@@ -275,13 +275,13 @@ footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
 
 
 /* ========================================= */
-/* --- FIXED LIGHTBOX MODAL (100% FIXED) --- */
+/* --- FIXED LIGHTBOX MODAL (NO BLANK SPACE) --- */
 /* ========================================= */
 .lightbox {
     display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
     background-color: rgba(0, 0, 0, 0.95); backdrop-filter: blur(5px);
     align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;
-    /* Removed outer padding to avoid flex centering issues */
+    padding: 2vh 0; /* Tiny padding so it doesn't touch the absolute top/bottom of screen */
 }
 .lightbox.active { display: flex; opacity: 1; }
 
@@ -290,8 +290,8 @@ footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
     width: 90%; 
     max-width: 900px; 
     
-    /* THE FIX: Explicitly tell the box to be exactly 90% of the screen height */
-    height: 90vh; 
+    /* CHANGE: Max-height instead of fixed height. Lets the box shrink if content is small */
+    max-height: 96vh; 
     
     background: var(--card-bg);
     border-radius: 12px; 
@@ -302,25 +302,26 @@ footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
     flex-direction: column;
 }
 
-/* Forces the media container to take exactly 55% of the modal height */
+/* CHANGE: Container shrinks to fit video exactly, up to a max limit */
 .lightbox-media-container { 
     width: 100%; 
-    flex: 0 0 55%; 
     background: #000; 
-    position: relative; /* Allows child absolute positioning */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex: 0 0 auto; /* Don't stretch */
 }
 
-/* Pins the video perfectly inside its container without stretching */
+/* CHANGE: Removed absolute positioning. Use max-height to restrict size. */
 .lightbox-media-container video, 
 .lightbox-media-container img { 
-    position: absolute;
-    top: 0; left: 0;
     width: 100%; 
-    height: 100%; 
+    max-height: 55vh; /* Maximum size, but will shrink if video is smaller */
     object-fit: contain; 
+    display: block; /* Removes weird inline spacing below media */
 }
 
-/* The text gets the remaining 45% and will scroll if it overflows */
+/* The text area flexes to fill space and scrolls if needed */
 .lightbox-details { 
     padding: 1.5rem; text-align: left; color: var(--text-color); 
     flex: 1 1 auto; 
