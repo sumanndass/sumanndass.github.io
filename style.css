@@ -273,22 +273,38 @@ input:checked + .slider .icon-dark { opacity: 1; }
 
 footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
 
+/* --- FIXED LIGHTBOX MODAL --- */
 .lightbox {
     display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
     overflow: auto; background-color: rgba(0, 0, 0, 0.95); backdrop-filter: blur(5px);
     align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;
+    padding: 20px 0; /* Add padding so it doesn't stick to the very top/bottom */
 }
 .lightbox.active { display: flex; opacity: 1; }
+
 .lightbox-content {
     position: relative; width: 90%; max-width: 900px; background: var(--card-bg);
     border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border: 1px solid var(--grid-line); display: flex; flex-direction: column;
+    border: 1px solid var(--grid-line); 
+    display: flex; flex-direction: column;
+    max-height: 90vh; /* Restrict maximum height of the modal */
 }
-.lightbox-media-container { width: 100%; background: #000; line-height: 0; display: flex; justify-content: center; align-items: center; min-height: 200px;}
-.lightbox-media-container video { width: 100%; max-height: 60vh; object-fit: contain; }
-.lightbox-media-container img { width: 100%; max-height: 60vh; object-fit: contain; }
 
-.lightbox-details { padding: 1.5rem; text-align: left; color: var(--text-color); }
+/* Ensure video/image area doesn't get crushed, but doesn't take over the screen */
+.lightbox-media-container { 
+    width: 100%; background: #000; line-height: 0; display: flex; 
+    justify-content: center; align-items: center; 
+    flex-shrink: 0; /* Prevent from shrinking too much */
+}
+.lightbox-media-container video { width: 100%; max-height: 45vh; object-fit: contain; } /* Adjusted to 45vh to leave room for text */
+.lightbox-media-container img { width: 100%; max-height: 45vh; object-fit: contain; }
+
+/* Make the text details section scrollable if content is too long */
+.lightbox-details { 
+    padding: 1.5rem; text-align: left; color: var(--text-color); 
+    overflow-y: auto; /* Adds a scrollbar ONLY if text/tags are too long */
+}
+
 .lightbox-details h3 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--accent); }
 .lightbox-details p { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; opacity: 0.9; }
 
@@ -395,6 +411,12 @@ footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
     .hero-text-container h2 { font-size: 1.1rem; }
     .profile-pic { width: 180px; height: 180px; }
     .cert-card-slide { min-width: calc(50% - 10px); }
+    
+    /* Lightbox fixes for mobile */
+    .lightbox-media-container video, 
+    .lightbox-media-container img {
+        max-height: 35vh; /* Even shorter on mobile so text fits */
+    }
     
     /* Scroll to Top adjustment */
     #scrollToTopBtn {
