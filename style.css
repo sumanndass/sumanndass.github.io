@@ -274,12 +274,12 @@ input:checked + .slider .icon-dark { opacity: 1; }
 footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
 
 
-/* --- FIXED LIGHTBOX MODAL (SCROLL FIX) --- */
+/* --- FIXED LIGHTBOX MODAL (SCROLL & FILL FIX) --- */
 .lightbox {
     display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
     overflow: auto; background-color: rgba(0, 0, 0, 0.95); backdrop-filter: blur(5px);
     align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;
-    padding: 20px; 
+    padding: 10px; /* Reduced outer padding to let modal expand further */
 }
 .lightbox.active { display: flex; opacity: 1; }
 
@@ -288,25 +288,22 @@ footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
     border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     border: 1px solid var(--grid-line); 
     display: flex; flex-direction: column;
-    max-height: 90vh; /* Strictly locks the modal height */
+    max-height: 98vh; /* Increased to fill almost the entire screen vertically */
 }
 
 .lightbox-media-container { 
     width: 100%; background: #000; line-height: 0; display: flex; 
     justify-content: center; align-items: center; 
-    flex: 0 0 auto; /* Forces video container to not stretch weirdly */
+    flex: 0 0 auto; 
 }
 
-/* Caps the video/image to max half the screen height */
+/* Slightly increased max-height so video scales up slightly more in the taller modal */
 .lightbox-media-container video, 
 .lightbox-media-container img { 
-    width: 100%; max-height: 50vh; object-fit: contain; 
+    width: 100%; max-height: 55vh; object-fit: contain; 
 }
 
-/* * THE MAGIC FIX FOR OVERFLOW 
- * flex: 1 1 auto; and min-height: 0; forces the text box to respect max-height: 90vh 
- * and adds an internal scrollbar if the tags/description are too long.
- */
+/* The Magic Fix: Forces text box to respect the height and adds an internal scrollbar */
 .lightbox-details { 
     padding: 1.5rem; text-align: left; color: var(--text-color); 
     flex: 1 1 auto; 
@@ -424,7 +421,7 @@ footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
     /* Lightbox fixes for mobile */
     .lightbox-media-container video, 
     .lightbox-media-container img {
-        max-height: 35vh; /* Even shorter on mobile so text fits */
+        max-height: 40vh; /* Better spacing on mobile */
     }
     
     /* Scroll to Top adjustment */
