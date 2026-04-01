@@ -275,57 +275,57 @@ footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
 
 
 /* ========================================= */
-/* --- FIXED LIGHTBOX MODAL (NO BLANK SPACE) --- */
+/* --- FIXED LIGHTBOX MODAL (FULL HEIGHT) --- */
 /* ========================================= */
 .lightbox {
     display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
     background-color: rgba(0, 0, 0, 0.95); backdrop-filter: blur(5px);
     align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;
-    padding: 2vh 0; /* Tiny padding so it doesn't touch the absolute top/bottom of screen */
+    padding: 0; /* Zero padding to touch top/bottom edges */
 }
 .lightbox.active { display: flex; opacity: 1; }
 
 .lightbox-content {
     position: relative; 
     width: 90%; 
-    max-width: 900px; 
+    max-width: 1000px; /* Made slightly wider for better viewing */
     
-    /* CHANGE: Max-height instead of fixed height. Lets the box shrink if content is small */
-    max-height: 96vh; 
+    height: 100%; /* Forces exact height of the screen */
+    max-height: 100%; 
     
     background: var(--card-bg);
-    border-radius: 12px; 
+    border-radius: 0; /* Removed rounding for a flush fit */
+    border: none;
+    border-left: 1px solid var(--grid-line); 
+    border-right: 1px solid var(--grid-line); 
     overflow: hidden; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border: 1px solid var(--grid-line); 
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
     display: flex; 
     flex-direction: column;
 }
 
-/* CHANGE: Container shrinks to fit video exactly, up to a max limit */
 .lightbox-media-container { 
     width: 100%; 
     background: #000; 
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    flex: 0 0 auto; /* Don't stretch */
+    flex: 0 0 auto; 
 }
 
-/* CHANGE: Removed absolute positioning. Use max-height to restrict size. */
 .lightbox-media-container video, 
 .lightbox-media-container img { 
     width: 100%; 
-    max-height: 55vh; /* Maximum size, but will shrink if video is smaller */
+    max-height: 65vh; /* Increased height so video looks huge */
     object-fit: contain; 
-    display: block; /* Removes weird inline spacing below media */
+    display: block; 
 }
 
-/* The text area flexes to fill space and scrolls if needed */
 .lightbox-details { 
-    padding: 1.5rem; text-align: left; color: var(--text-color); 
+    padding: 2rem; text-align: left; color: var(--text-color); 
     flex: 1 1 auto; 
     overflow-y: auto; 
+    min-height: 0; 
 }
 
 .lightbox-details h3 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--accent); }
@@ -343,7 +343,6 @@ footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
     cursor: pointer; z-index: 1002; transition: 0.2s;
 }
 .close-lightbox:hover { color: var(--accent); }
-
 
 /* --- SCROLL TO TOP BUTTON --- */
 #scrollToTopBtn {
@@ -438,17 +437,21 @@ footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
     
     /* MOBILE LIGHTBOX SPECIFICS */
     .lightbox-content {
-        width: 95%; /* Make slightly wider on mobile */
-        height: 85vh; /* Keep it safe from mobile browser address bars */
+        width: 100%; /* Completely fill mobile screen side-to-side */
+        border: none;
     }
-    .lightbox-media-container {
-        flex: 0 0 40%; /* Video is smaller on mobile to allow text to fit */
+    .lightbox-media-container video, 
+    .lightbox-media-container img {
+        max-height: 40vh; /* Keeps video from dominating mobile screen */
     }
     .lightbox-details {
-        padding: 1rem; /* Smaller padding on mobile text */
+        padding: 1.2rem;
     }
     .lightbox-details h3 {
         font-size: 1.4rem;
+    }
+    .close-lightbox {
+        top: 10px; right: 15px; font-size: 35px;
     }
     
     /* Scroll to Top adjustment */
